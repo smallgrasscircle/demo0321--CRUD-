@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"xwork-validator-1.0.3.dtd">
+<validators>
+  <!-- 字段校验 -->
+ <field name="username">
+   <!-- 飞空校验 -->
+   <field-validator type="requiredstring">
+     <param name="trim">true</param>
+     <message>用户名不能为空</message>
+   </field-validator>
+   <!-- 长度校验 -->
+   <field-validator type="stringlength">
+      <param name="minLength">5</param>
+      <param name="maxLength">13</param>
+      <message>长度在5~13个之间</message>
+   </field-validator>
+ </field>
+ 
+ <field name="pass1">
+   <field-validator type="requiredstring">
+     <param name="trim">true</param>
+     <message>密码不能空</message>
+   </field-validator>
+ </field>
+ 
+  <field name="pass2">
+   <field-validator type="requiredstring">
+     <param name="trim">true</param>
+     <message>确认密码不能空</message>
+   </field-validator>
+   
+   <field-validator type="fieldexpression">
+     <param name="expression">pass1==pass2</param>
+     <message>确认密码和密码不一致</message>
+   </field-validator>
+ </field>
+  
+</validators>

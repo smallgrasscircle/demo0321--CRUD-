@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"struts-2.3.dtd">
+
+<struts>
+	<!-- 支持动态方法的调用 -->
+	<constant name="struts.custom.i18n.resources" value="globes"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<package name="default" extends="struts-default" >
+	   <!-- 定义StudentAction -->
+	   <action name="stuaction" class="com.student.action.StudentAction">
+	      <result name="success">/stu/success.jsp</result>
+	      <result name="input">/stu/add.jsp</result>
+	      <result name="showall">/stu/showall.jsp</result>
+	       <result name="error">/stu/error.jsp</result>
+	       <result name="update">/stu/update.jsp</result>
+	   </action>
+	   
+	   <!-- 测试框架校验的UserAction -->
+	   <action name="useraction" class="com.user.action.UserAction">
+	     <result name="input">/user/login.jsp</result>
+	      <result name="success">/user/success.jsp</result>
+	   </action>
+	</package>
+</struts>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"xwork-validator-1.0.3.dtd">
+<validators>
+  <!-- 字段校验 -->
+   <field name="stu.sname">
+     <field-validator type="requiredstring">
+       <param name="trim">true</param>
+       <message>${getText("error.sname")}</message>
+     </field-validator>
+     
+     <field-validator type="stringlength">
+       <param name="trim">true</param>
+       <param name="minLength">2</param>
+       <param name="maxLength">9</param>
+       <message>长度在2~9范围内</message>
+     </field-validator>
+   </field>
+   
+   <field name="stu.sno">
+     <field-validator type="requiredstring">
+        <param name="trim">true</param>
+       <message>学生学号不能为空</message>
+     </field-validator>
+     
+     <field-validator type="stringlength">
+     <param name="trim">true</param>
+       <param name="minLength">5</param>
+       <param name="maxLength">10</param>
+       <message>长度在5~10范围内</message>
+     </field-validator>
+   </field>
+  
+   <field name="stu.birthday">
+     <field-validator type="required">
+       <message>生日日期不能为空</message>
+     </field-validator>
+     <field-validator type="date">
+       <param name="min">2015-9-13</param>
+       <param name="max">2015-9-20</param>
+       <message>入学时间${min}到${max}之间</message>
+     
+     </field-validator>
+   </field>
+</validators>
